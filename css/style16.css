@@ -1,0 +1,294 @@
+div {
+    border-style: dotted;
+ 
+ }
+ 
+ nav {
+    border-style: dashed;
+    padding: 10%;
+   }
+ 
+ blockquote {
+ 
+    border: 50px solid navy;
+    border-radius: 50px;
+ }
+ 
+ p {
+    border-style: double;
+ 
+ }
+ 
+ i {
+    border-color: red;
+    border-style: groove;
+ }
+ 
+ mark {
+    border-color: red;
+    border-style: ridge;
+ }
+ 
+ pre {
+    border-width: 40px 40px 40px 40px;
+ 
+    border-style: inset;
+    border-color: blue red green navy;
+ 
+ }
+ 
+ center {
+    border-width: thick thin medium;
+    border-color: blue red green navy;
+    border-style: outset;
+ }
+ 
+ h2 {
+    border-width: 10px;
+    border-top-style: dotted;
+    border-bottom-style: dashed;
+    border-right-style: solid;
+    border-left-style: double;
+ }
+ 
+ form {
+    border-width: 10px;
+    border-style: dotted double dashed double;
+    border-color: blue red green navy;
+ }
+ 
+ .one {
+  
+    border: 10px solid red;
+    margin:  30px 40px 50px 60px ;
+    
+ }
+  .head{
+    width: 100px;
+    border: 10px solid red;
+    margin:  auto ;
+    padding-top: 60px; 
+    padding-left: 60px ;
+    padding-right: 60px;
+    padding-bottom: 50px;
+  }
+ 
+ .two {
+    border: 10px solid red;
+    margin: 5px;
+ }
+ 
+ .three {
+    border: 10px solid red;
+    margin-top: 10px;
+ }
+ 
+ .four {
+   width: 100px;
+   border: 10px solid red;
+   margin:  auto ;
+   padding:inherit; 
+   box-sizing: inherit;
+ }
+ 
+ .five {
+    border: 10px solid red;
+    margin-right: 10px;
+ }
+ 
+ .six {
+    border: 10px solid red;
+    margin-left: 3%;
+ }
+ 
+ .seven {
+   width: 100px;
+   border: 10px solid red;
+   margin:  auto ;
+   padding:50px; 
+   box-sizing:  border-box;
+ }
+ 
+ .eight {
+    border: 10px solid red;
+    margin-top: 10px;
+ }
+ 
+ .nine {
+    border: 10px solid red;
+    margin: inherit;
+ }
+ 
+ .ten {
+    border: 2px solid red;
+ 
+ }
+ 
+  .monis {
+    border: 2px solid blue;
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-right: 40px;
+    margin-bottom: 50px;
+ }
+ .wase {
+    border: 2px solid blue;
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-right: 40px;
+    margin-bottom: 50px;
+ }
+ .Eleven {
+    border: 2px solid blue;
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-right: 40px;
+    margin-bottom: 50px;
+ }
+ .name {
+    border: 2px solid blue;
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-right: 40px;
+    margin-bottom: 50px;
+ }
+ .big {
+    border: 2px solid blue;
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-right: 40px;
+    margin-bottom: 50px;
+ }
+ .A1 {
+    border: 2px solid blue;
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-right: 40px;
+    margin-bottom: 50px;
+ }
+ .b2 {
+    border: 2px solid blue;
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-right: 40px;
+    margin-bottom: 50px;
+ }
+ .c3 {
+    border: 2px solid blue;
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-right: 40px;
+    margin-bottom: 50px;
+ }
+ .d4 {
+    border: 2px solid blue;
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-right: 40px;
+    margin-bottom: 50px;
+ }
+ .e5 {
+    border: 2px solid blue;
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-right: 40px;
+    margin-bottom: 50px;
+ }
+ .f6 {
+    border: 2px solid blue;
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-right: 40px;
+    margin-bottom: 50px;
+ }
+ .g7 {
+    border: 2px solid blue;
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-right: 40px;
+    margin-bottom: 50px;
+ }
+ .h8 {
+    border: 2px solid blue;
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-right: 40px;
+    margin-bottom: 50px;
+ }
+ .j9 {
+    border: 2px solid blue;
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-right: 40px;
+    margin-bottom: 50px;
+ }
+ .k10 {
+    border: 2px solid blue;
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-right: 40px;
+    margin-bottom: 50px;
+ } 
+ .L11 {
+    border: 2px solid blue;
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-right: 40px;
+    margin-bottom: 50px;
+ }
+ .m12 {
+    border: 2px solid blue;
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-right: 40px;
+    margin-bottom: 50px;
+ }
+ .n13 {
+    border: 2px solid blue;
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-right: 40px;
+    margin-bottom: 50px;
+ }
+ .o14 {
+    border: 2px solid blue;
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-right: 40px;
+    margin-bottom: 50px;
+ }
+ .p15 {
+    border: 2px solid blue;
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-right: 40px;
+    margin-bottom: 50px;
+ }
+ .q16 {
+    border: 2px solid blue;
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-right: 40px;
+    margin-bottom: 50px;
+ }
+ .r17 {
+    border: 2px solid blue;
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-right: 40px;
+    margin-bottom: 50px;
+ }
+ .s18 {
+    border: 2px solid blue;
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-right: 40px;
+    margin-bottom: 50px;
+ }
+ .v19 {
+    border: 2px solid blue;
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-right: 40px;
+    margin-bottom: 50px;
+ }
