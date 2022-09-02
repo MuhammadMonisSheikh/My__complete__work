@@ -1,0 +1,48 @@
+body {
+  border: 6px black solid;
+}
+
+.headings {
+  text-align: center;
+}
+ 
+.img__1 {
+  width: 20rem;
+}
+
+.img__2 {
+  width: 17rem;
+  margin-bottom: 1%;
+}
+
+.heading_1{
+  margin-top: 0rem;
+    font-size: 2.5rem;
+  text-align: center;
+}
+
+.heading_2{
+  margin-top: -1rem;
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.heading_3{
+  margin-top: -2rem;
+  text-align: center;
+}
+.paragraph_4{
+  text-align: center;
+}
+
+
+#HTML{
+  text-align: center;
+  width: 1000px;
+  margin-top: -136px;
+}
+
+#HTML_Logo {
+  width: 184px;
+  margin-left: 999px;
+}
