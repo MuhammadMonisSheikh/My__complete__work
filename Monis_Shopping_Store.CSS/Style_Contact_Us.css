@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,300&family=Montserrat:ital,wght@1,100;1,300;1,500&family=Pacifico&family=Sacramento&family=Trispace:wght@800&display=swap');
+
+* {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    font-style: italic;
+}
+
+body {
+    color: #FFFFFF;
+    background-color: rgb(16, 16, 16);
+    background-position: center;
+    font-family: Georgia, Times, serif;
+    line-height: 1.4em;
+    margin: 0px;
+    font-style: italic;
+    background-blend-mode: color;
+    background-attachment: fixed;
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+}
+
+h1 {
+    margin-top: -30px;
+    text-align: center;
+}
+
+img {
+    margin-left: 450px;
+    margin-top: -10px;
+}
+#name {
+    background-image: url(https://cdn-icons-png.flaticon.com/128/6135/6135324.png);
+    background-size: 40px;
+    background-repeat: no-repeat;
+    background-position-x: 15rem;
+    background-position-y: 0.3rem;
+}
+#email {
+    background-image: url(https://cdn-icons-png.flaticon.com/128/732/732200.png);
+    background-size: 40px;
+    background-repeat: no-repeat;
+    background-position-x: 15rem;
+    background-position-y: 0.3rem;
+}
+#Subject {
+    background-image: url(https://cdn-icons-png.flaticon.com/512/5526/5526535.png);
+    background-size: 40px;
+    background-repeat: no-repeat;
+    background-position-x: 15rem;
+    background-position-y: 0.3rem;
+}
+#Message {
+    background-image: url(../assets_3/message.png);
+    background-size: 40px;
+    background-repeat: no-repeat;
+    background-position-x: 15rem;
+    background-position-y: 1rem;
+}
+.wrapper {
+    min-height: 100vh;
+    display: flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Contact_US {
+    margin-top: -50px;
+}
+
+.title {
+    text-decoration: underline;
+    clear: both;
+    border: solid rgba(48, 48, 55, 0.5);
+    background-color: rgba(48, 48, 55, 0.5);
+    padding: 5px 10px;
+    height: 50px;
+}
+ 
+.form_wrap input[type="name"] {
+    width: 90%;
+    border: 1px solid #9597a6;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    padding: 15px;
+    outline: none;
+}
+
+.form_wrap input[type="name"]:focus {
+    border: #CF25B1 solid;
+}
+
+.form_wrap input[type="email"] {
+    width: 90%;
+    border-radius: 5px;
+    border: 1px solid #9597a6;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    padding: 15px;
+    outline: none;
+}
+
+.form_wrap input[type="Subject"] {
+    width: 90%;
+    border-radius: 5px;
+    border: 1px solid #9597a6;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    padding: 15px;
+    outline: none;
+}
+
+.form_wrap textarea[name="comments"] {
+    width: 90%;
+    border-radius: 5px;
+    border: 1px solid #9597a6;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    padding: 15px;
+    outline: none;
+}
+
+.form_wrap {
+    margin-top: 35px;
+
+}
+
+.form_wrap {
+    margin-top: 35px;
+
+}
+
+.form_wrap .input_wrap {
+    margin-bottom: 15px;
+}
+
+.form_wrap .input_wrap:last-child {
+    margin-bottom: 0px;
+}
+
+.form_wrap .input_wrap label {
+    display: block;
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #A5A5A5;
+    text-align: center;
+    margin-top: -10px;
+}
+
+legend {
+    display: block;
+    font-size: 20px;
+    margin-top: -10px;
+    margin-bottom: 35px;
+    color: #A5A5A5;
+    text-align: center;
+}
+
+.form_wrap input[type="email"]:focus {
+    border: #CF25B1 solid;
+}
+
+input {
+    background-color: rgb(23, 23, 23);
+    color: white;
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+textarea {
+    background-color: rgb(23, 23, 23);
+    color: white;
+    font-size: 20px;
+    margin-left: 20px;
+    margin-top: -15px;
+}
+
+.form_wrap input[type="Subject"]:focus {
+    border: #CF25B1 solid;
+}
+
+.form_wrap textarea[name="comments"]:focus {
+    border: #CF25B1 solid;
+}
+
+.D9 {
+    background: #CF25B1;
+    background-image: -webkit-linear-gradient(top, #CF25B1, #D327A9);
+    background-image: -moz-linear-gradient(top, #CF25B1, #D327A9);
+    background-image: -ms-linear-gradient(top, #CF25B1, #D327A9);
+    background-image: -o-linear-gradient(top, #CF25B1, #D327A9);
+    background-image: linear-gradient(to bottom, #CF25B1, #D327A9);
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 15px;
+    padding: 15px 40px 15px 40px;
+    text-decoration: none;
+    margin-top: -20px;
+    border: none;
+    float: left;
+    margin-left: 35px;
+}
+
+.D9:hover {
+    background: #B816DA;
+    background-image: -webkit-linear-gradient(top, #B816DA, #D227AA);
+    background-image: -moz-linear-gradient(top, #B816DA, #D227AA);
+    background-image: -ms-linear-gradient(top, #B816DA, #D227AA);
+    background-image: -o-linear-gradient(top, #B816DA, #D227AA);
+    background-image: linear-gradient(to bottom, #B816DA, #D227AA);
+    text-decoration: none;
+
+}
+
+.D10 {
+    background: #CF25B1;
+    background-image: -webkit-linear-gradient(top, #CF25B1, #D327A9);
+    background-image: -moz-linear-gradient(top, #CF25B1, #D327A9);
+    background-image: -ms-linear-gradient(top, #CF25B1, #D327A9);
+    background-image: -o-linear-gradient(top, #CF25B1, #D327A9);
+    background-image: linear-gradient(to bottom, #CF25B1, #D327A9);
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 15px;
+    padding: 15px 40px 15px 40px;
+    text-decoration: none;
+    border: none;
+    margin-top: -20px;
+    margin-left: 10px;
+}
+
+.D10:hover {
+    background: #B816DA;
+    background-image: -webkit-linear-gradient(top, #B816DA, #D227AA);
+    background-image: -moz-linear-gradient(top, #B816DA, #D227AA);
+    background-image: -ms-linear-gradient(top, #B816DA, #D227AA);
+    background-image: -o-linear-gradient(top, #B816DA, #D227AA);
+    background-image: linear-gradient(to bottom, #B816DA, #D227AA);
+    text-decoration: none;
+}
