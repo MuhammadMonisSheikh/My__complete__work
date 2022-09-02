@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MensAllClothes</title>
+</head>
+<style>
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333333;
+    }
+
+    li {
+        float: left;
+    }
+
+    li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        text-decoration: none;
+    }
+
+    li a:hover {
+        background-color: #111111;
+    }
+
+    table,
+    th,
+    td {
+        border: 1px solid black;
+        background-color: black;
+    }
+
+    table.center {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    td {
+        color: white;
+    }
+
+    ol {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: black;
+    }
+
+    li {
+        float: left;
+    }
+
+    li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        text-decoration: none;
+    }
+
+    li a:hover {
+        background-color: black;
+    }
+</style>
+
+<body
+    background="data:image/jpeg;base64,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">
+
+    <ol>
+        <li> <img width="100px" align="left"
+                src="data:image/png;base64,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 "
+                alt=""> </li>
+
+        <li><a href="AdidasOnlineShoppingStore.html">Home</a></li>
+        <li><a href="LadiesShelwarKameez.html">Go back</a></li>
+        <li><a>About this app</a></li>
+        <li><a href=" ContactDetailsOfThisWebOwner.html ">Contact details of this web owner </a></li>
+        <form style="text-align: center;" action=" ">
+            <input type="search" />
+            <input type="button" value="Search " />
+        </form>
+    </ol>
+    <br />
+    <br />
+    <table>
+        <tr>
+            <td>
+                <img width="600px" src="https://static-01.daraz.pk/p/60dd1645b602b3d713f3bbf370fe8ede.jpg" alt="">
+            </td>
+            <td>
+                <h1>
+                    Brown Leather Dress Coat For Men
+                </h1>
+                <ul>
+                    <li>
+                        Home Delivery
+                        3 - 4 days
+                        Rs. 119
+                        Cash on Delivery Available
+                        Return & Warranty
+
+                        100% Authentic
+
+                        14 days easy return
+                        Change of Mind applicable
+                        Warranty not available
+                    </li>
+                    <li>
+                        In stock·Brand: MONCLER
+                        n/a
+                    </li>
+                    <li>
+                        Actual Price <del>10,000 R.S</del> rebi ul awal discount Price <ins>7000 R.S</ins>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+    <br />
+    <table>
+        <tr>
+            <td>
+                <img width="600px"
+                    src="https://static-01.daraz.pk/p/2fd2766cd01f4203378e9a6cbe646a00.jpg_340x340q80.jpg_.webp" alt="">
+            </td>
+            <td>
+                <h1>
+                    Check Shirts For Men's & Boys,
+                </h1>
+                <ul>
+                    <li>
+                        In stock·Brand: No Brand
+                        Check Shirts New High Quality Branded New Style Comfortable Check Shirt For Men & Boys, Multi
+                        Colors Checkered Formal Shirts, Cotton Fine Quality ...
+                    </li>
+                    <li>
+                        Home Delivery
+                        3 - 4 days
+                        Rs. 69
+                        Cash on Delivery Available
+                        Return & Warranty
+                        7 Day Return
+                        Change of mind available
+                        Warranty not available
+                    </li>
+                    <li>
+                        Actual Price <del>5000 R.S</del> rebi ul awal discount Price <ins>3500 R.S</ins>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+    <br />
+    <table>
+        <tr>
+            <td>
+                <img width="600px"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9IS5xfJRn0sT5OekVi7kY7WGSd2JF5R0lzA&usqp=CAU"
+                    alt="">
+            </td>
+            <td>
+                <h1>
+                    Buy 1 Ready Made Stylish Gents Stylish New Design Kurta For Men - Maroon
+                </h1>
+                <ul>
+                    <li>
+                        Home Delivery
+                        3 - 4 days
+                        Rs. 99
+                        Cash on Delivery Available
+                        Return & Warranty
+                        7 Day Return
+                        Change of mind available
+                        Warranty not available
+                    </li>
+                    <li>
+                        In stock·Brand: No Brand
+                        Product details of Buy 1 Ready Made Stylish Gents Stylish New Design Kurta For Men - Maroon *
+                        Trendy; * Comfortable * Easy to Wash * Size: S, M, L and ...
+                    </li>
+                    <li>
+                        Actual Price <del>2500 R.S</del> rebi ul awal discount Price <ins>1500 R.S</ins>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+    <br />
+    <table>
+        <tr>
+            <td>
+                <img width="600px"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRn7EKF-oD43A2KHBs5Zq53mwM3JyA5wWrD-w&usqp=CAU"
+                    alt="">
+            </td>
+            <td>
+                <h1>
+                    Dress Shirt Baruti White Shirt for men Formal shirt menswear
+                </h1>
+                <ul>
+                    <li>
+                        Home Delivery
+                        3 - 4 days
+                        Rs. 69
+                        Cash on Delivery Available
+                        Return & Warranty
+                        7 Day Return
+                        Change of mind available
+                        Warranty not available
+                    </li>
+                    <li>
+                        n stock·Brand: No Brand
+                        Formal Dress ShirtComfortable and perfect for office use.✅High Quality✅Bubble Free✅Soft
+                        Fabric✅Comfortable✅Four-Seasons Wearable✅Best Stitching✅ Good ...
+                    </li>
+                    <li>
+                        Actual Price <del>5000 R.S</del> -50% rebi ul awal discount Price <ins>2500 R.S</ins>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+    <br />
+    <table>
+        <tr>
+            <td>
+                <img width="600px"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHDQDjIvadNLh2PLLMbMoeETKOIAL4RJ-aSw&usqp=CAU"
+                    alt="">
+            </td>
+            <td>
+                <h1>
+                    Red And Black Plaid Flannel Mens Shirts
+                </h1>
+                <ul>
+                    <li>
+                        Home Delivery
+                        3 - 4 days
+                        Rs. 49
+                        Cash on Delivery Available
+                        Return & Warranty
+                        7 Day Return
+                        Change of mind available
+                        Warranty not available
+                    </li>
+                    <li>
+                        In stock·Brand: No Brand
+                        * Gender:Men * Item Type:Shirts * Style:Smart Casual * Collar:Turn-down Collar * Closure
+                        Type:Single Breasted * Sleeve Style:Regular * Shirts ...
+                    </li>
+                    <li>
+                        Actual Price <del>7000 R.S</del> rebi ul awal discount Price <ins>4000 R.S</ins>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    </table> <br />
+    <table>
+        <tr>
+            <td>
+                <img width="600px"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFeGMkOdR4JfC8hbBwlwbrsUrJQGCGwFc2LQ&usqp=CAU"
+                    alt="">
+            </td>
+            <td>
+                <h1>
+                    Men's Fashion Pants in Grey Cotton Jeans Check Style - Pants for Men
+                </h1>
+                <ul>
+                    <li>
+                        Home Delivery
+                        3 - 4 days
+                        Rs. 69
+                        Enjoy free shipping promotion with minimum spend of Rs. 3,500 from 22nd Century Collections.
+                        Cash on Delivery Available
+                        Return & Warranty
+                        7 Day Return
+                        Change of mind available
+                        Warranty not availabl
+                    </li>
+                    <li>
+                        · In stock·Brand: No Brand
+                        These Pants are classic slim-Fit and are available in Perfect Fabric & Stitching. This garment
+                        is made of Pure Cotton Jeans Material. These Pants are ...
+
+                    </li>
+                    <li>
+                        Actual Price <del>8000 R.S</del> rebi ul awal discount Price <ins>5000 R.S</ins>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    </table> <br />
+    <table>
+        <tr>
+            <td>
+                <img width="600px"
+                    src="data:image/jpeg;base64,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"
+                    alt="">
+            </td>
+            <td>
+                <h1>
+                    Check Shirts For Men's & Boys,
+                </h1>
+                <ul>
+                    <li>
+                        Home Delivery
+                        3 - 4 days
+                        Rs. 69
+                        Cash on Delivery Available
+                        Return & Warranty
+                        7 Day Return
+                        Change of mind available
+                        Warranty not available
+                    </li>
+                    <li>
+                        In stock·Brand: No Brand
+                        Check Shirts New High Quality Branded New Style Comfortable Check Shirt For Men & Boys, Multi
+                        Colors Checkered Formal Shirts, Cotton Fine Quality ...
+                    </li>
+                    <li>
+                        Actual Price <del>10,000 R.S</del> rebi ul awal discount Price <ins>7000 R.S</ins>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    </table> <br />
+    <table>
+        <tr>
+            <td>
+                <img width="600px"
+                    src="https://static-01.daraz.pk/p/f2b86a9d3ff46e44671c74bd321560bb.jpg_340x340q80.jpg_.webp" alt="">
+            </td>
+            <td>
+                <h1>
+                    Cut Price Formal Dress Shirts for Men Premium OFF White
+                </h1>
+                <ul>
+                    <li>
+                        Home Delivery
+                        3 - 4 days
+                        Rs. 99
+                        Cash on Delivery Available
+                        Return & Warranty
+
+                        100% Authentic
+
+                        14 days easy return
+                        Change of Mind applicable
+                        Warranty not available
+                    </li>
+                    <li>
+                        In stock·Brand: Cut Price Shop
+                        * Perfect for all Seasons * Regular Fit * For Men * Party Wear * Blended Wash & Wear * Perfect
+                        for gift purposes, Made by the finest fabric with every ..
+                    </li>
+                    <li>
+                        Actual Price <del>2500 R.S</del> rebi ul awal discount Price <ins>1500 R.S</ins>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    </table> <br />
+    <table>
+        <tr>
+            <td>
+                <img width="600px"
+                    src="https://static-01.daraz.pk/p/77803ea0b3f78d0784c3e0fbc576a22d.jpg_340x340q80.jpg_.webp" alt="">
+            </td>
+            <td>
+                <h1>
+                    New Style Fashion Men Clothing Polo Shirt
+                </h1>
+                <ul>
+                    <li>
+                        Home Delivery
+                        6 - 9 days
+                        Rs. 199
+                        Cash on Delivery Available
+                        Return & Warranty
+                        7 Days Returns
+                        Change of mind is not applicable
+                        Warranty not available
+                    </li>
+                    <li>
+                        In stock·Brand: No Brand
+                        Style: Men's polo shirt, Fabric: Peak Soft Stretch Cotton , Logo: 3D Front Emb logo, Sleeve:
+                        Short-Sleeve, Fitting: Slim fit
+                    </li>
+                    <li>
+                        Actual Price <del>3500 R.S</del> rebi ul awal discount Price <ins>2500 R.S</ins>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    </table> <br />
+    <table>
+        <tr>
+            <td>
+                <img width="600px"
+                    src="https://static-01.daraz.pk/p/ba16696daf26b1ec1d8010a7e61fa33f.jpg_340x340q80.jpg_.webp" alt="">
+            </td>
+            <td>
+                <h1>
+                    Classic men clothing
+
+                </h1>
+                <ul>
+                    <li>
+                        Home Delivery
+                        5 - 8 days
+                        FREE
+                        Cash on Delivery Available
+                        Return & Warranty
+                        7 Day Return
+                        Change of mind available
+                        Warranty not available
+                    </li>
+                    <li>
+                        In stock·Brand: No Brand
+                        Unstiched best collection of full suit of men. Best quality fabric in classic colour and
+                        suitable for every occassion
+                    </li>
+                    <li>
+                        Actual Price <del>10,000 R.S</del> rebi ul awal discount Price <ins>8000 R.S</ins>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    </table> <br />
+    <table>
+        <tr>
+            <td>
+                <img width="600px"
+                    src="https://static-01.daraz.pk/p/9b62e775ae1470ccf7f9d565cbce4bee.jpg_340x340q80.jpg_.webp" alt="">
+            </td>
+            <td>
+                <h1>
+                    Sale price Fashion & Stylish Slim Fit Jeans For Men
+                </h1>
+                <ul>
+                    <li>
+                        Home Delivery
+                        6 - 9 days
+                        Rs. 99
+                        Cash on Delivery Available
+                        Return & Warranty
+                        7 Day Return
+                        Change of mind available
+                        Warranty not available
+                    </li>
+                    <li>
+                        In stock·Brand: No Brand
+                        Fashionable, Export Quality, Soft & Comfortable, Genre: Unisex, Item Type: Jeans,
+                        Style:Stretchable Narrow Denim, Material:Denim-Mix cotton, ...
+                    </li>
+                    <li>
+                        Actual Price <del>4500 R.S</del> rebi ul awal discount Price <ins>3500 R.S</ins>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    </table> <br />
+    <table>
+        <tr>
+            <td>
+                <img width="600px"
+                    src="https://static-01.daraz.pk/p/5887255e878cddf8557afa4890f62c04.jpg_340x340q80.jpg_.webp" alt="">
+            </td>
+            <td>
+                <h1>
+                    Men's Formal Dress Shirt - Black
+                </h1>
+                <ul>
+                    <li>
+                        Home Delivery
+                        3 - 4 days
+                        Rs. 99
+                        Cash on Delivery Available
+                        Return & Warranty
+                        7 Day Return
+                        Change of mind available
+                        Warranty not available
+                    </li>
+                    <li>
+                        In stock·Brand: No Brand
+                        These finest quality men’s dress shirts are made from premium quality wash n wear fabric that
+                        gives you a stylish and elegant look in your office and ...
+                    </li>
+                    <li>
+                        Actual Price <del>2000 R.S</del> rebi ul awal discount Price <ins>1500 R.S</ins>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    </table> <br />
+    <table>
+        <tr>
+            <td>
+                <img width="600px"
+                    src="https://static-01.daraz.pk/p/130b158df560e7f7df32a3c27e7152ed.jpg_340x340q80.jpg_.webp" alt="">
+            </td>
+            <td>
+                <h1>
+                    T Shirts Collection For Mens
+
+                </h1>
+                <ul>
+                    <li>
+                        Home Delivery
+                        3 - 4 days
+                        Rs. 99
+                        Cash on Delivery Available
+                        Return & Warranty
+                        7 Day Return
+                        Change of mind available
+                        Warranty not available
+                    </li>
+                    <li>
+                        In stock·Brand: No Brand
+                        Latest T Shirts Collection, Fabric Jersey
+                    </li>
+                    <li>
+                        Actual Price <del>1500 R.S</del> rebi ul awal discount Price <ins>1000 R.S</ins>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    </table> <br />
+    <table>
+        <tr>
+            <td>
+                <img width="600px"
+                    src=" https://static-01.daraz.pk/p/f94174426e1a7156b500265555cd7926.jpg_340x340q80.jpg_.webp"
+                    alt="">
+            </td>
+            <td>
+                <h1>
+                    Pack of 2 - Dress Shirts For Men - Maroon & Blue
+                </h1>
+                <ul>
+                    <li>
+                        Home Delivery
+                        3 - 4 days
+                        Rs. 99
+                        Cash on Delivery Available
+                        Return & Warranty
+                        7 Day Return
+                        Change of mind available
+                        Warranty not available
+                    </li>
+                    <li>
+                        In stock·Brand: No Brand
+                        * Cotton Material * Regular fit * Button down design * Comfortable
+                    </li>
+                    <li>
+                        Actual Price <del>4500 R.S</del> rebi ul awal discount Price <ins>3500 R.S</ins>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    </table> <br />
+    <table>
+        <tr>
+            <td>
+                <img width="600px"
+                    src="https://static-01.daraz.pk/p/c0ad6c974c5c7e76c7a05677e5a723cb.jpg_340x340q80.jpg_.webp" alt="">
+            </td>
+            <td>
+                <h1>
+                    Men’s dress shirt purple self with point collar and french cuffs
+                </h1>
+                <ul>
+                    <li>
+                        Home Delivery
+                        3 - 4 days
+                        Rs. 99
+                        Cash on Delivery Available
+                        Return & Warranty
+                        7 Day Return
+                        Change of mind available
+                        1 Month Brand Warranty
+                    </li>
+                    <li>
+                        In stock·Brand: zee clothing
+                        At Z8 Clothing, we seamlessly merge cutting edge fashion with premium design principles. Each
+                        mens shirt is crafted to meet the highest standards that ...
+
+                    </li>
+                    <li>
+                        Actual Price <del>6000 R.S</del> -50% rebi ul awal discount Price <ins>3000 R.S</ins>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    </table> <br />
+    <table>
+        <tr>
+            <td>
+                <img width="600px"
+                    src="https://static-01.daraz.pk/p/932fc9b33270e3d47ba18968f2f6aaab.jpg_340x340q80.jpg_.webp" alt="">
+            </td>
+            <td>
+                <h1>
+                    White Irish Linen Casual Shirts For Men
+                </h1>
+                <ul>
+                    <li>
+                        Home Delivery
+                        3 - 4 days
+                        Rs. 99
+                        Enjoy free shipping promotion with minimum spend of Rs. 3,000 from YNG Empire (Karachi).
+                        Cash on Delivery Available
+                        Return & Warranty
+                        7 Day Return
+                        Change of mind available
+                        Warranty not available
+                    </li>
+                    <li>
+                        In stock·Brand: No Brand
+                        * White * Material: Irish Linen * Stylish & Comfortable * Casual Wear
+                    </li>
+                    <li>
+                        Actual Price <del>4500 R.S</del> rebi ul awal discount Price <ins>3000 R.S</ins>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    </table> <br />
+    <table>
+        <tr>
+            <td>
+                <img width="600px"
+                    src="https://static-01.daraz.pk/p/d499a5e614dd68005546f9f80a4cb1c4.jpg_340x340q80.jpg_.webp" alt="">
+
+
+            </td>
+            <td>
+                <h1>
+                    All Seasons Faded Blue Jeans Pants in Regular pattern and Decent Look - New Men's Fashion
+                </h1>
+                <ul>
+                    <li>
+                        Home Delivery
+                        3 - 4 days
+                        Rs. 69
+                        Enjoy free shipping promotion with minimum spend of Rs. 1,200 from IS Fashion.
+                        Cash on Delivery Available
+                        Return & Warranty
+                        7 Day Return
+                        Change of mind available
+                        Warranty not available
+                    </li>
+                    <li>
+                        In stock·Brand: No Brand
+                        Jeans for Men - Pant shirt for boys - Jeans Pants for Men - Jeans, for Boys-Black Jeans - Men's
+                        Jeans – Boy’s Fashion – Men’s Fashion – Clothes -, ...
+                    </li>
+                    <li>
+                        Actual Price <del>6000 R.S</del> rebi ul awal discount Price <ins>3000 R.S</ins>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    </table> <br />
+    <table>
+        <tr>
+            <td>
+                <img width="600px"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlLgdpetzv1kXafCseSICRsmTwfxVR5FpaTg&usqp=CAU"
+                    alt="">
+            </td>
+            <td>
+                <h1>
+                    Check Shirts For Men & Boys,
+                </h1>
+                <ul>
+                    <li>
+                        Home Delivery
+                        3 - 4 days
+                        Rs. 69
+                        Cash on Delivery Available
+                        Return & Warranty
+                        7 Day Return
+                        Change of mind available
+                        Warranty not available
+                    </li>
+                    <li>
+                        In stock·Brand: No Brand
+                        Check Shirts New High Quality Branded New Style Comfortable Check Shirt For Men & Boys, Multi
+                        Colors Checkered Formal Shirts, Cotton Fine Quality ...
+                    </li>
+                    <li>
+                        Actual Price <del>7000 R.S</del> -50% rebi ul awal discount Price <ins>3500 R.S</ins>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    </table> <br />
+    <table>
+        <tr>
+            <td>
+                <img width="600px"
+                    src="https://static-01.daraz.pk/p/d37f919144b51f5358050f01db478f14.jpg_340x340q80.jpg_.webp" alt="">
+            </td>
+            <td>
+                <h1>
+                    Check Shirts For Men & Boys,
+                </h1>
+                <ul>
+                    <li>
+                        Home Delivery
+                        3 - 4 days
+                        Rs. 69
+                        Cash on Delivery Available
+                        Return & Warranty
+                        7 Day Return
+                        Change of mind available
+                        Warranty not available
+                    </li>
+                    <li>
+                        In stock·Brand: No Brand
+                        Check Shirts New High Quality Branded New Style Comfortable Check Shirt For Men & Boys, Multi
+                        Colors Checkered Formal Shirts, Cotton Fine Quality ...
+                    </li>
+                    <li>
+                        Actual Price <del>6000 R.S</del> -50% rebi ul awal discount Price <ins>3000 R.S</ins>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    </table> <br />
+    <table>
+        <tr>
+            <td>
+                <img width="600px"
+                    src="https://static-01.daraz.pk/original/a33594a06b5a79eed94a6c5b3b67c848.jpg_340x340q80.jpg_.webp"
+                    alt="">
+            </td>
+            <td>
+                <h1>
+                    Black Mix Cotton Kurta For Men With White Shalwar
+                </h1>
+                <ul>
+                    <li>
+                        Home Delivery
+                        3 - 4 days
+                        Rs. 99
+                        Enjoy free shipping promotion with minimum spend of Rs. 10,000 from HyperZone (Karachi).
+                        Cash on Delivery Available
+                        Return & Warranty
+                        7 Day Return
+                        Change of mind available
+                        Warranty not available
+                    </li>
+                    <li>
+                        In stock·Brand: No Brand
+                        ... , BlackMix CottonDurable And StylishLatest Design
+                    </li>
+                    <li>
+                        Actual Price <del>5000 R.S</del> -50% rebi ul awal discount Price <ins>2500 R.S</ins>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    </table> <br />
+    <table>
+        <tr>
+            <td>
+                <img width="600px"
+                    src="data:image/jpeg;base64,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"
+                    alt="">
+            </td>
+            <td>
+                <h1>
+                    Black Cotton Shalwar Kameez For Men
+                </h1>
+                <ul>
+                    <li>
+                        Home Delivery
+                        3 - 4 days
+                        Rs. 49
+                        Enjoy free shipping promotion with minimum spend of Rs. 10,000 from HyperZone (Karachi).
+                        Cash on Delivery Available
+                        Return & Warranty
+                        7 Day Return
+                        Change of mind available
+                        Warranty not available
+                    </li>
+                    <li>
+                        In stock·Brand: No Brand
+                        * Cotton (PC) * Durable And Stylish * Latest Design * Shrink Free * Wrinkle Free * Color will
+                        Never Fade
+                    </li>
+                    <li>
+                        Actual Price <del>7000 R.S</del> rebi ul awal discount Price <ins>3500 R.S</ins>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    </table> <br />
+    <table>
+        <tr>
+            <td>
+                <img width="600px"
+                    src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHCBYWFRgWFRUYGBgaGBoYGBgYHBkYGhocGBgaGhgYHBgcIS4lHB4rHxgYJjgmKy8xNTU1GiQ7QDszPy40NTEBDAwMEA8QHhISHzYsJCs6NDQ0NjQ2NDQ0NDQ0ND00NDQ0NDQ0NjQ0NDQ0NDQ2NDQ0NDQ0NDQ0NDQ0NDUxNDQ0Nf/AABEIAOEA4QMBIgACEQEDEQH/xAAcAAEAAQUBAQAAAAAAAAAAAAAABgEDBAUHAgj/xABHEAACAQIDAwkEBwYDBwUAAAABAgADEQQSIQUxQQYHEyJRYXGBkTJSodEjM2JykrHBFBVCU6LwgtLhFyRDVJPC8RYlY3Oz/8QAGQEBAAMBAQAAAAAAAAAAAAAAAAECAwQF/8QAKREAAgICAgEDAQkAAAAAAAAAAAECEQMxEiFBBCJRYRMycZGhwdHh8P/aAAwDAQACEQMRAD8A7NERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQCkRMXGYxaa5nNh8SewCQ2krYSsypSaTDY6rWN0XIo4nX4/oJZ2Ltxq1Z6RQAKCQwN75WC66cb3mKzxbS+dfUs4uiQxOe4blE5xxYlmQv0SpfKFDMFDldx1Gp7/CSfYm30xBZQCrrclTrdQQMwYaEXM15xujLBP7aMpRXSdM3sTzEsXPUSlogFYlLSsAREQBPLMBvM9TFxrALc33jcC3wAMhgvdKvvD1EdKvvD1E1PSr9rzRx+azw9ReJ9QRK8i3E3PSr7w9RHSr2j1mooVFN7EHwl8GOQo2HSDtHrHSDtHrMG8oWk8iKM/OO0esxE2rQYErWpkLfMQykC2++ulrGWK+JVEZ3IVVUsxO4ADXxnOcLgnxAxOIRWo0arCqiNvZWuHcsp6uYguUtfretJzcVaLwipOmzp9HaNF1zrVpsm/MrKVtvvcG0yFqqQCCCDqDece2rj0w1N6eZFrHNTdKZdwijgQ1gWbq203E621nQOTG2FxWGp1AyF8gFRV/gewDDLvUXBIvwtJi5NcmuiZRinSZI8w7RGcdomLaLS1lOJlZx2iJjRFjiXq1UKpZjYAEk9gAuZC8AzY3EFmuKa627F/hX7xtr4GbXlzWIwrW/iZFPhe/6TUbPo4hMEjYYOWeoTVNPojVCAOq9GK3UvmVL5tylrC9pzZPflUPC7ZePti5edEhx2LCq1OmpBHUFhYC4Fyvbvt4yuwdlikpZh1239wG4frI5+ybTFOq1XEhKgWglLKtAoWKoa9UZqZYgEuApOpVjoGXLQ4bazZslcAHOqu4oEBcy9G6otNWz5A2bMcuZhZbbrxgudt2/C+EUb6pEgbZxNY9VOite2Vd7A5sthcHNqdeN5k4DYtCic1NLNr1iSx1tcXJ3aCaWrhdpmlTC1aS1MtVqrEZlFSo4FNEAt1UVm1N7lVuDrLFHA7UVlY1lYKVzoXQdJapmJRhR6i5VC2NyQ7agqCdI4lG3vu+/2HN1S6X08/iTWVnPm2NtjX/eqZJUalioRyyZ8qrTsVC9KFzXOq33SZ7KoutJFqMWcKMzFs12OrWJAuL7tN00KmdERAEREAREQCkxsb7Pn85kzGx3s+Y/WQ9ErZhrKzyJUyhY8VGlBFXhPOaAXA85Tyk5xKzuyYRglNSQHAV3exsWGYEKp4WF7WN9bCWc4W1f2fA1Sps72oprY3e+YjvChj5TiCvYDuFpvhgn2ykpeCW8kNqmrjkGMd6wbVDUZnyOhDo6AmyHqndbTuvO4KgylbCxvccNb30ny8uKdXVkJVlbMCOBGs7RyK5SVcYrZ6AYIqoDnyDPYFmvw3jUagbr3ImXqcVyvwWxvqvJBOV9VamPxLJqM6pm4XSmiNY8bMrDyljAY2pQcPRdkYaXU7x2MNzDuNxNlyp2C+Er5GJZGGdHt7Vz1wftBr+oPGad9AAN50+f9+E64JcElozk+zq/JPlsmIIpVwtOqdFIPUqHsW/st9nW/A8JMjPnSvdVuCQw1BAAsRuI46T6EwlfPTR/fRX/ABKD+swywUXaLxlZevERMi5a21s4V6LUzpcXU9jDVT6/C8iVDbGIwdPoWw5cqTlbNYWJvcadYXJ3a68JPZ5ZQd4B8ZSeLk+UXTIjKlTVoiOxMPXxBFXEXC8ARlv3KvAd/HvkvUSgYdsqrAyceNQ+re2RJtnqVlLyhM1KnqJbWoDuInrNAPUTwrg7p6vAKxPGcbuM9wBEpeIAmNjvZ8x+syZj4w2XzHdIeiVswYJnm590fi/0lGDe6PX/AEmdljxVJ0lkvLrI3ufETAqV/sN/T84BzHnf2mWqUsONyIajd7Ocq+iqfxyDud02HLjGirja7LfLmyC//wAaKjeWZGPnNadbCd8FUUjGWy028STciOVhwLVrqXzqCg4BwbXbusTf7oEjtt+kxaukmUVJUwm07ROcftJ8STUqPd92u4diqOC+E12GJLajd/Z/vumsweIKi+/t7xNtnVxmHtDy+MldAt7Tc5Tpw0trfun0NgqOSmie4iJ+FQP0nC9g4UV8Xhqe8NUVj91PpHH4UM72TOfO9IvApEreJgaGZKGYuOxtOiueq6otwMzGygsbKCeFyQPMRicaiFA7qpdsiAmxZrE5VHE2BPlLmZz3au0RQx2NaqGXpKASicpIc5F0BH2rjyMwtlVsUiUMPSqtQAwr12BRWPtuR7QuCQB67p1YqDMPamOSjTarUJCILsVVnIBIF8qgsRrrYaC54TPg72dq9WlFLivG/oqIdR29izgRUbKgNI2xLML58+VQaQQ2vuzbr62mnr7UrNTwVRsTWVWquCzKmjLaxsq2cXvYEflOqLYjuMw8XtGjSBNRwoUZmJuQg95iBZR3m0ODfkiPqYxbagt3/rOWYzGVRTqOtQ0l/eLB2RVXSwYOxUDNbXQ3zX1vpNwu2qrV66VcSy5VcU6HRi1VBSY5y2W4uAG393dOjhQRLK10OWzKc2YLZgc2X2gO21jfstCg/kl+ri1XBfp/BzHYWMxWHGFVHLpUo1nWjlFgVDMozWzEltd/dK4LlLjeiq1FrrWIpBmQr16TlwC2VUUBQpOhJ3X3TqlhKBBCxteSX6uDbbgr/s59yKqmpjatQ1WrfQKOkZQma5BIAAAsDceU6HMNMbS6Towwz62HblsWAO4kXFxvF5exNcIrOx6qgs1gWNgLmyqCT4AXloqlRzZ8n2suSVdJfkRfnIxbU8PSyGzPiKdO/YHDAn0vbvtIAMfUK1L1Shp1SmYAMXBVSq5SbZ+sF03nsvOr7b2ZSxadDUb2WVyFIzDQ5CeK63IOnszQ/wDojC5VPSnKHzhswsalz1i1+s1777zeElFUzmkm30WOQZfpCKjZm6I5jwvmXh3bvKTTG+z5j9ZrtkbBTDuXVmYlctjbiQb6eE2GOYBbk2F950HHjKZWm7RbGml2YameiZaWqpBIZSOJBFh5z2TMTUoZEeVW1jhsPUqqLuoAS+7M7BVJ7gTfyktJnPecKsBg6oIvdqYHcekU3+EtBXJIh6OM4knjv4nib9t5mUt8x8Uuq+ImRQ3ztW2ZM9lZjYhJmkS1VSWIMTD4m2nl4zaYasNLGaOsljLuHqGZxk7plmvJ2Pmm2OWd8Y+6xpUR6dI/wyjxfunULyF81J/9up39+r/+rSZXnLklcmaxVI9RKXHaIlCTX8qESoiUKlN3StUFN8qMwVcrNmYgHKMwUXO4kSOZazJhKtenUNXDYlKFwrMWCs1KviLKNEcFWueCaaHXoNotNDMgFWrWehiGLYtcQtDEI1NFrIoqb6bI+5jmVQhp6lXNxvtttl4ZjXqpUaq9N8NhWu/SZGfNWFYAN1UuopZkFhYi41MlNotAIxsJqhxNUsajoc5DNnTIRVP0LU26pI1yOtrpa49lmt7Kx3RtXoV6VQu1es6kUnqJWp1HJpkOqldEKIQxFsmumsldotAIarVajD66nXp4qxW9RaRw/S24fRspw5uDvDga3mvwOHZVwhRK/SU6WKRQ3T5el6hRXzaZSVOp6uhnQrSmUQCAbU6R8PUq4dsWC2Dqh0b9oDiv1OhyoestTNnBCC1t+mWSHYwZcRiFLVWUpRdWqZypZlcOVLdVdy3VbAaaCb+0WgEEbDuGqjD9LkqHEtUpMHR8PVy1PpqFQAMvSPbqg69JmWwzCWMXiqrU8VkGKBOzaZpEftAJrgVQSq71e4pg7i1r6jWdCtFoBHdkIBisS1qnX6JlLdJkK9GoNs3VBzXFt41miGzXQF6NN2pVsbevSKsCjDHZkxKKw9kqFzW0y5XG43n9otAIfU21is+Iy02K0grr9A4LqmIqLXppc9ZuiWmV1uzHMBlYAezUq5q4rILnDUmLKjauxxGelmFw5UZNBr1++S20xcdovmJD0StnMMHgnFABqTsTgsArfRsuR6Lj6MqR13F3YsNVsL20m5xO18SrOq0y5VcUw+ici9Oon7PqvtZqbubA3YrYWOkkhqGWKlYytk0edn1WZLuwY5msQjJ1b9W6uASQLC9gDa9hOac5YZqK6aLWBNjfergcB2/GdDr4xh2SA8tsNVrLTp0xfNUuxuABZSFvxsS3AHdJi0pJsNOqRy6qesoPj8Jk0N8y9qbLfDu61QLgKqkHMCzEMSDbgqtfxHbMOhvnbGSl2jJqumZMMs9AT0BLEGBWo30tPCUQJsGWWnS5gHaOa6v/ALgihGYq9QEgrvLluJHBhJearfy39U/zSI81aAYAW3mrUJ/pH5ASaCcGRe5m8X0Y/St/Lf8Ao/zysyIlKJs2MRE1MxERAEREAREQBERAERLNWuqC7MqjcCxC+WsAvRLFHEI3sOrfdYN+Rl+AUmLtH2D4j85lTF2l7B8RIegahjMWoZfczFqtKFzCxLTX0qGeog4Bsx/T4/lMzEtNZSxmSqjN7Bax7rggH1MyyN8WaY17kQ/nRp2q0mB6rK+nepQE/ADykMpSS8vsWjVadNCT0SMrggjK7NmZb/xcNe+RqmJ3emTWJWZZmnN0Ziz1eeFMredBiGnkypaeCYB2jmrYfsAvf62pwJ4jiJM+r2n0b5SA80mU4JruRbEVNLge4ePjJ4qp/MP4hOCf3mbR0e7DtPoflEpkX+YfxCUlKJNpERNSgiIgFJWUJkf2xywwWHuKuITMN6J9I/miXI87QlYJDE5PtbnfUaYbDk9j1mCjxCJckeLCQna3LzHV7hsQyKf4KI6MfiXrnzaaLHJkckd62pt3DYcXr16dPuZgGPgu8+QkM2pzs4ZLihTqVjwY2ppfxbrf0ziZbee03J7SeJ7TKFjLrEvJHIm+2Oc7HVbhGSgp4U1BfwLvf4ASHYrFNVbPVd6je87F2/Exv5THtParNFFLRFlaFRkbNTdkYbmRipHgy2Iks2Rzj4+h7VQVl92suY6djrZr95JkSaUKmGk9g7ZsLnZw1Sy4hGw7bs31lO/3lGYea2HbJpXxaVKIem6ujWKsjBlPgRpPlxkmZs3amIwzZqNV0J3hT1WtuzIeq3mJnLEnolSPoFmmNWaQDYvOTuTFU7cOkpg+rUzr5qT4SZUMclVA9J1dDuZTceB7D3HWc04Sjs1TTLOJeaupY79e6ZuJaarG4gIjudyKz/hBP6TOr6F0c427tF61Vs1rIzKlhrlByi546KDfvMwqcteO/jLqGelGKiqRi227ZkqYYzyJ4d5JBVnhGlotPFRrAnukA6zzL4hf2asGUsf2gtcKze0icQD7s6QtZPcb/pv/AJZyjmX2lTp0sStSoidemVDkDerAkegnTl27hv8AmaP4h85wTfuN46M3pU9xv+m/+WJh/v3Df8zR/EPnErZJv5bdwoJJAA1JJsB4kzjPOBzjY6hiqmHpBaKIQFfIGd1IvnBe65TwsPOc/wAZtyriTevWqVO53LAeCHqjyE6Ix5eTJujv+1ecHAULg11qMNMlH6Q37My9UeZEgu2Od6q11w1BUHB6pzt+BbKD/iM5ppKWmqxxRXkzabV5TYvEfX4io490HIn4Esp8xNXbyi0rNEqIPFoAlSYvJACwBKiDAKxEoYBS8qGlZS0A83MoRPUFhAPNpkbPx1Wg+ei5RuNvZa3Bl3MPGYrVBLTYoSrquyUdK2PyoTEWR7JV92/VfvQnj9k6+MxuWOJyYcqDrUdUHhfMfgpHnOamqSePdbt7p0Hllk6BS182dQmp3kda/b1QdTOVxipriaW+PZBzvl1ZZvLlOdhkXy0ss0qzTxAAMt1z1TLksYo6ecrN1FkrZvuRu6p4p+TSTyL8jB9b/g/75KbTz5bNVopErEqSSDnxw1AJRqPQdqrBqa1VcKEy9dVdSpzg5mIGm46icQtPq7lVyep46g1CqWUEgqy71YbmtuPgfhvnzxyu5H4jAPaquamxslVb5H7B9lrfwnsNrjWdMaKGgo4kjQzNSoDumqIlUcjdNYza6kVaNteepi0MRfxl4NNU70Qe7SkAwBJIPUoTK3EoXEArKGUziWqlcCAXC08PUmI+IllqhMo5xRPFma1cCY74jsmPJRsjkJjcQocUTTp/zKvUU3tawPWYa7wLd8yeV+CVEjLOTLmGwz1GyojO3YoLH4Tp+zebyhTs1ZjWbfb2E9Abt6+UkiUURQqIqL2KAo9BMZTsuokE5K8mXpOatdQGA6i3DEHixtcA7ra8TMXlvib1KaX9lWcj7xsPgp9ZOarTl+38TnxLtwDMo8E6v5qT5ycXcrEukatzbdC4gjh+kq6ywonVJu+iiL37V3fGe+nFr2Mx6NFmvlF7Ase4KLkzyTpM4zdOw0ZIrg8D8Ju9gbLWurllJAICm5BBsS27uKyP0xvPdadF5F4W2GVved29Gy/9sjJKXDsmKVmJszYgoM+ViVbLod4y34jfv7JsxQM24w09DCzlds0o03RHs/OJuugiRQOvTGxuCSshp1UV0YWKsAVPkZkxNihwzltzUVKZargQalPUmiTeon3SfbXfp7X3pyqpTKkgixBsb6EEbwRwM+yJCOWnN7h8cC4+ixHCoo0Y20FRf4vHQ99tJN3sHzYDMvD1+B9ZmcouTuIwVTo8RTKnXKw1RwD7SNxHdvHECahTaWjJxZDVmyLzwa0xuk0nk1pu5xRWmZRqS09TvmOXM8Sksq8E0XTVM8EyR8n+RGOxljRoEIf+JU6iW7Qx1YfdBnUOT/MzQSzYuq1Zt5ROongW9s+IKzJyb2TRxTA4GpWcJRpvUc7lRSzeg4To3JzmexNWzYpxh090WeoR2adVfG58J27Zuy6OHTJQpJTXsRQt+823nvMzpUkivJ7kFgcJY06IeoP+LV6737RfRT90Cbbb/wBSfvL+c2c1u3fqj4r+ch6JWyG1mmDXebOqB2zAr27ZlZpRpsfXCIzHcqlvQE/pOT1Sbqx37yfPWdI5XYkJh311ayD/ABHX+kNOfMuZbTqwR6bMp7osVDb+98tF+6Xi3VH97pSjSZ2CKLljYf32cZvIoiQcjMIp6V2FwR0Y7w2rj0y+sjuNw5puyHerEePYfMWM6XsvCLSpqim9hqe1jqx8zIBtzF9NXd7WW+Ve8LoCe87/ADnLB8pOjRqkYQFlnXOT9DJh6KkWIpqSO9hmPxJnNdi7LfE1VRRpcF24Kt9ST62HEztdNBuEnPKkooQV2zFS09qomeiCewgnMa0a/KP7ETZ5REEUTiIibmQiIgGv2rsqjiabUq9NaiNvVvzB3gjgRYicL5c82FbC5q2HvWoDUjfUpjjmAHWUe8PMcZ9CShgHxpLtGizsFVSzE2CqCzE9gA1M+kNqc2Oz69bpmpshNyyU2yI5PEqBofukb5Itj7Aw2FXLh6CUxaxKjrG3vObs3mTAOF8nOafG4gB61sMh1+kBaoR/9QII8GKmdW5Oc3GBwlmFPpqg16StZyCDcFVtlXxtfvkziAUAlYiAIiIBSanlL9QfvL+c20123VvSI71/OVlolbIJWQ+83qZr69M2PWb1MkFWhNdi6UyNiBcrqBNLNmJyMCASbG/Vtrx1kQouPnJ/ylZRQqXAN1Nge3+Hzvb0nOcubW/n/wCJ14JOjHIuz2y6zebGwuSzm4J3cOr/AK/KaOnTZiFXUk20kwweDIVV1NgBc8bDfJzzpURCPdmSmKsCSzWAJNixOgvukGxbq1RmUZVLEgdg+Z3915MKtMrIjXwt3bKNCzWA3jWY4mky8yX83iXaswYiwRco0BvmIa/boR5zoNJGv7R3dpkJ5uAuSqg9sOCR9nKAPHUN6idAp090rldybLR0EQ9p9TLq0zfefUy8EnsppMyxY6P7R9TEv3iATSIibmAiIgCIiAIiIAiIgCIiAIiIAmBtf6s+ImdLdakrCzC48/0kPRKdMjGT9fl+kjvKHHUaC3quFLeyu9m8FGtu/d3zoJ2bTtbKfxN85oMTzfbPqOXqUGdjYFmrVyTYWFz0mp75VR+S7n8HENs7S6ZsxGRB7CneTrqe/XymtxuMNYqHSkpAAzqoQtYWu7D2jpvM77/s22be/QNfgenxFx4fSTz/ALM9mXucMSb31rVzfxu+sslWilnHuSWx1NW4qK75T1ENwATvY8d26dBw2yNd3CTjBcmcJRFqVBKYO/Jdb8Lmx1PeZlfumj7nxb5ykoybtsupRS0c02hyczg5d85TiyUqOL2Idl07QSDPqL900vc/qb5zR0eb/Z6lyuHILoyOelrG6uQWGr6XtvFpMU0VlJM5LzYVVFeohBu6ZgdLdRt3bc5v6e6dRCTM2byDwFBxUpUCrgEAmpWbQix0ZyN03P7qpe58W+cSi2yVJJGgA0hRJCNm0/d+LfOBs2n7vxb5yOLJ5ojUSSfuul7vxb5xHBjmjOiImhmIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgH//2Q=="
+                    alt="">
+            </td>
+            <td>
+                <h1>
+                    Navy Blue Cotton With unstitched Shalwar Kameez suit for Men
+                </h1>
+                <ul>
+                    <li>
+                        In stock·Brand: No Brand
+                        Rs.150 OFF for New Users! ✓10% Extra Bank Discount on Navy Blue Cotton With unstitched Shalwar Kameez suit for Men at Daraz.pk. ✓Low Prices ✓Fast ...
+                    </li>
+                    <li>
+                        Home Delivery
+                        6 - 9 days
+                        Rs. 199
+                        Cash on Delivery Available	
+                        Return & Warranty	
+                        7 Day Return
+                        Change of mind available
+                        Warranty not available
+                    </li>
+                    <li>
+                        Actual Price <del>6000 R.S</del> rebi ul awal discount Price <ins>3000 R.S</ins>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    </table> 
+    <br />
+    <ol>
+        <li><a>&copy;2021</a></li>
+        <form style="text-align: right;" action=" ">
+            <select name="device">
+                <li><a>
+                        <option value="language" selected="selected"> language</option>
+                    </a></li>
+                <li>
+                    <option value="English">English</option>
+                </li>
+                <li>
+                    <option value="Urdu">Urdu</option>
+                </li>
+                <li><a>
+                        <option value="Arabic">Arabic</option>
+                    </a></li>
+            </select>
+        </form>
+    </ol>
+ </body>
+</html>

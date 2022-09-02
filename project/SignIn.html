@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignIn</title>
+</head>
+<style>
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: black;
+    }
+
+    li {
+        float: left;
+    }
+
+    li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        text-decoration: none;
+    }
+
+    li a:hover {
+        background-color: black;
+    }
+
+    table,
+    th,
+    td {
+        border: 10px solid black;
+        background-color: black;
+    }
+
+    table.center {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    td {
+        color: white;
+    }
+</style>
+
+<body
+    background="data:image/png;base64,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 ">
+    <ul>
+        <li><img width="100px"
+                src="data:image/png;base64,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"
+                alt=""></li>
+        <li><a href=" AdidasOnlineShoppingStore,SignInorSignUp.html">Home</a></li>
+    </ul>
+
+    <table class="center">
+        <tr>
+            <td>
+                <p>
+                    First Name:
+                </p>
+                <input type="text" name="First Name" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>
+                    Last Name:
+                </p>
+                <input type="text" name="Last Name" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>
+                   Email or Phone no:
+                </p>
+                <input type="Email or Phone no " name="Email or Phone no" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>
+                    Password:
+                </p>
+                 <input type=" password"name="Password">
+            </td>
+        </tr>
+        <tr>
+            <td>
+  <a href="SignInWithPhoneNo.html">forget email</a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <ul>
+                    <li>
+                        <a href="AdidasOnlineShoppingStore.html">
+                        SignIn
+                    </a>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+    <ul>
+        <li><a>&copy;2021</a></li>
+        <form style="text-align: right;" action=" ">
+            <select name="device">
+                <li><a>
+                        <option value="language" selected="selected"> language</option>
+                    </a></li>
+                <li>
+                    <option value="English">English</option>
+                </li>
+                <li>
+                    <option value="Urdu">Urdu</option>
+                </li>
+                <li><a>
+                        <option value="Arabic">Arabic</option>
+                    </a></li>
+            </select>
+    </ul>
+</body>
+
+</html>
